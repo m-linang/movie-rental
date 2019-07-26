@@ -10,6 +10,7 @@
 <h2>@Model.Title</h2>
 @using (Html.BeginForm("Save", "Movies"))
 {
+    Html.ValidationSummary(true, "Please see errors");
 <div class="row">
     <div class="form-group">
         <div class="row">

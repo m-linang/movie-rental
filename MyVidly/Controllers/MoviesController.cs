@@ -38,6 +38,12 @@ namespace MyVidly.Controllers
         [HttpPost]
         public ActionResult Save(Movies movies)
         {
+            if (!ModelState.IsValid)
+            {
+                this.ModelState.AddModelError("Movies_Name", "Lagyan mo ng laman!");
+                this.ModelState.AddModelError("Movies_GenreId", "Lagyan mo ng laman!");
+                this.ModelState.AddModelError("Movies_ReleasedDate", "Lagyan mo ng laman!");
+            }
             if (movies.Id == 0)
             {
                 movies.DateAdded = DateTime.Now;

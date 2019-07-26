@@ -269,6 +269,10 @@
     <Compile Include="Migrations\201907250922014_AddEditandUpdate.Designer.cs">
       <DependentUpon>201907250922014_AddEditandUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907260934592_AddValidationMessage.cs" />
+    <Compile Include="Migrations\201907260934592_AddValidationMessage.Designer.cs">
+      <DependentUpon>201907260934592_AddValidationMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -432,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907250922014_AddEditandUpdate.resx">
       <DependentUpon>201907250922014_AddEditandUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907260934592_AddValidationMessage.resx">
+      <DependentUpon>201907260934592_AddValidationMessage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

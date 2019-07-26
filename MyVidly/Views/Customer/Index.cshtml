@@ -14,6 +14,7 @@
                     <th>Customer</th>
                     <th>Membership Type</th>
                     <th>Discount Rate</th>
+                    <th>Subscribed to NewsLetter</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,11 +28,15 @@
                 {
                     foreach (var customer in Model)
                     {
-                        <tr>
-                            <td>@Html.ActionLink(customer.Name, "Edit", "Customer", new { id = customer.Id }, null)</td>
-                            <td>@customer.MembershipType.MembershipTypeValue</td>
-                            <td>@customer.MembershipType.DiscountRate %</td>
-                        </tr>
+                    <tr>
+                        <td>@Html.ActionLink(customer.Name, "Edit", "Customer", new { id = customer.Id }, null)</td>
+                        <td>@customer.MembershipType.MembershipTypeValue</td>
+                        <td>@customer.MembershipType.DiscountRate %</td>
+                        @{
+                            var isSubscribed = customer.IsSubscribedToNewsLetter ? "Yes" : "No";
+                        }
+                        <td>@isSubscribed</td>
+                    </tr>
                     }
                 }
             </tbody>
