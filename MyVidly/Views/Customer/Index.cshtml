@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MyVidly.Models.Customer>
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-striped table-hover">
+            <caption>List of Customers</caption>
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Membership Type</th>
+                    <th>Discount Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td>No Customer!</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var customer in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(customer.Name, "Edit", "Customer", new { id = customer.Id }, null)</td>
+                            <td>@customer.MembershipType.MembershipTypeValue</td>
+                            <td>@customer.MembershipType.DiscountRate %</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+    </div>
+    <div class="col-md-12">
+        @Html.ActionLink("Add Customer", "New", "Customer", new { @class = "btn btn-danger" })
+    </div>
+</div>
+
